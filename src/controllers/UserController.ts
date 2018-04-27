@@ -7,7 +7,7 @@ export const list = (req: Request, res: Response) => {
       users: [
         { name : 'John Doe', age: 21, city : 'Montreal' },
         { name : 'Jane Doe', age: 21, city : 'vachier' },
-        { name : 'Baba!', age: 21, city : 'tamere' },
+        { name : 'Derp Boy', age: 21, city : 'tamere' },
       ],
     },
   });

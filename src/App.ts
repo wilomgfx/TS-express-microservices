@@ -17,7 +17,7 @@ class App {
     this.express = express();
     this.middleware();
     this.routes();
-    this.express.set('port', process.env.PORT || 3000);
+    this.express.set('port', process.env.PORT || 9000);
   }
 
   // Configure Express middleware.
