@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    # command: nodemon --inspect server.js
+    env_file:
+      - '.env.dev'
+    ports:
+      - '3000:3000'
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: sh -c "mkdir -p dist && touch ./dist/server.js && nodemon --delay 500ms ./dist/server.js"
+    
+  transpiler:
+    build: .
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: ["tsc", "-w"]
+  # postgres:
+  #   image: postgres:9.6.2-alpine
+  #   environment:
+  #     POSTGRES_USER: micro_users
+  #     POSTGRES_DB: users
